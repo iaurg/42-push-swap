@@ -10,3 +10,5 @@ Made with PDF Version 5
 ## Resources
 
 [Interative game to visualize push swap](https://phemsi-a.itch.io/push-swap)
+
+[Analysis of algorithms complexity](https://en.wikipedia.org/wiki/Analysis_of_algorithms)

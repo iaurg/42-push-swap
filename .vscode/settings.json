@@ -1,0 +1,27 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false,
+  "editor.tabSize": 4,
+  "editor.rulers": [80],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.associations": {
+	".sequelizerc": "javascript",
+	"libft.h": "c",
+	"array": "c",
+	"sigaction": "c",
+	"deque": "c",
+	"string": "c",
+	"unordered_map": "c",
+	"vector": "c",
+	"string_view": "c",
+	"initializer_list": "c",
+	"unistd.h": "c",
+	"stdio.h": "c",
+	"signal.h": "c",
+	"minitalk.h": "c"
+},
+"C_Cpp.errorSquiggles": "EnabledIfIncludesResolve"
+}
