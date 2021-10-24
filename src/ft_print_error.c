@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_print_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/24 13:38:30 by itaureli         ###   ########.fr       */
+/*   Created: 2021/10/24 13:00:10 by itaureli          #+#    #+#             */
+/*   Updated: 2021/10/24 13:37:48 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "../libs/libft/libft.h"
-int	ft_print_error(void);
-#endif
+#include "../includes/header.h"
+
+int ft_print_error(void)
+{
+	ft_putstr_fd("Error \n", 2);
+	return (0);
+}
