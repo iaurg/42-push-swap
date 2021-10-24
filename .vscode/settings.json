@@ -23,5 +23,31 @@
 	"signal.h": "c",
 	"minitalk.h": "c"
 },
-"C_Cpp.errorSquiggles": "EnabledIfIncludesResolve"
+"C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
+"todo-tree.general.tags": [
+	"BUG",
+	"HACK",
+	"FIXME",
+	"TODO",
+	"XXX",
+	"GOAL"
+],
+"todo-tree.highlights.backgroundColourScheme": [
+	"red",
+	"orange",
+	"yellow",
+	"green",
+	"blue",
+	"indigo",
+	"violet"
+  ],
+  "todo-tree.highlights.foregroundColourScheme": [
+	  "black",
+	  "black",
+	  "black",
+	  "black",
+	  "black",
+	  "black",
+	  "black"
+  ]
 }
