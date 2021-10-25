@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/24 13:34:32 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/25 06:17:13 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 {
 	if (argc < 2)
 		return ft_print_error();
-	if (!ft_validate_args(argc, argv))
+	if (!is_valid_number(argc, argv))
 		return ft_print_error();
 	// ft_putstr_fd(argv[1], 1);
 	return (0);
