@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/25 19:53:44 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:12:12 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 
 /*
-TODO: Validate it's a integer with INT_MAX and INT_MIN
+OK: Validate it's a integer with INT_MAX and INT_MIN
 TODO: Not allow duplicates
+TODO: Review pdf rules
 */
 
 // Remove it
