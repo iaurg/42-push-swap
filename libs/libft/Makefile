@@ -4,7 +4,7 @@ NAME = libft.a
 SOURCES = ft_strlen.c ft_itoa.c ft_strchr.c
 SOURCES += ft_putchar_fd.c ft_putstr_fd.c
 SOURCES += ft_strdup.c ft_strlcpy.c ft_atoi.c
-SOURCES += ft_isdigit.c
+SOURCES += ft_isdigit.c ft_atol.c
 
 # Use same files from sources, but change .c to .o
 OBJECTS = ${SOURCES:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 07:38:35 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/16 15:06:45 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/25 19:30:41 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 char		*ft_itoa(int n);
 int			ft_atoi(const	char *nptr);
+long		ft_atol(const	char *nptr);
 int			ft_isdigit(int c);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
