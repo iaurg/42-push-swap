@@ -6,19 +6,17 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/28 19:24:43 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:03:20 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-
-
 /*
 OK: Validate it's a integer with INT_MAX and INT_MIN
 TODO: Not allow duplicates
 TODO: Review pdf rules
-TODO: Not allow strings
+OK: Not allow strings
 */
 
 // Remove it
@@ -47,4 +45,13 @@ int	is_valid_number(int argc, char **argv)
 		i++;
 	}
 	return (true);
+}
+
+static void check_duplicate()
+{
+	/*
+	Navigate into all values get from argv and check if there's any
+	duplicated value, I need to pass for every item and compare to next
+	items if there's any equal value
+	*/
 }
