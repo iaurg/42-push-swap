@@ -12,3 +12,7 @@ Made with PDF Version 5
 [Interative game to visualize push swap](https://phemsi-a.itch.io/push-swap)
 
 [Analysis of algorithms complexity](https://en.wikipedia.org/wiki/Analysis_of_algorithms)
+
+[wwwwelton notion](https://bumpy-truffle-c97.notion.site/Push_swap-083c229036284c84a802166ccb02126c)
+
+[push swap visualization](https://whimsical.com/push-swap-checker-AeuM51nCzTm2wVJ6qSn5DC)
