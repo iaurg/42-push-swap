@@ -16,3 +16,9 @@ Made with PDF Version 5
 [wwwwelton notion](https://bumpy-truffle-c97.notion.site/Push_swap-083c229036284c84a802166ccb02126c)
 
 [push swap visualization](https://whimsical.com/push-swap-checker-AeuM51nCzTm2wVJ6qSn5DC)
+
+[Stack structure](https://www.programiz.com/dsa/stack)
+
+## Notes
+
+Análise de complexidade nos permite medir o quão rápido um programa executa suas computações.
