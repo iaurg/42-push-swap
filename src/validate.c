@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/29 20:03:20 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:09:27 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 OK: Validate it's a integer with INT_MAX and INT_MIN
-TODO: Not allow duplicates
+OK: Not allow duplicates
 TODO: Review pdf rules
 OK: Not allow strings
 */
@@ -22,7 +22,7 @@ OK: Not allow strings
 // Remove it
 #include <stdio.h>
 
-int	is_valid_number(int argc, char **argv)
+static int	is_valid_number(char **argv)
 {
 	int i;
 	int j;
@@ -30,7 +30,7 @@ int	is_valid_number(int argc, char **argv)
 
 	j = 0;
 	i = 1;
-	while (i < argc)
+	while (argv[i])
 	{
 		while (argv[i][j])
 		{
@@ -47,11 +47,30 @@ int	is_valid_number(int argc, char **argv)
 	return (true);
 }
 
-static void check_duplicate()
+static int has_duplicate(char **argv)
 {
-	/*
-	Navigate into all values get from argv and check if there's any
-	duplicated value, I need to pass for every item and compare to next
-	items if there's any equal value
-	*/
+	int i;
+	int j;
+
+	i = 1;
+	j = 2;
+	while (argv[i])
+	{
+		while (argv[j])
+		{
+			if (ft_atol(argv[i]) == ft_atol(argv[j]))
+				return (true);
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+	return (false);
+}
+
+int is_valid(char **argv)
+{
+	if(!is_valid_number(argv) || has_duplicate(argv))
+		return (false);
+	return(true);
 }

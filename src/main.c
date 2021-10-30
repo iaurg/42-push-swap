@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/29 20:02:26 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:06:11 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,12 @@ B: is empty
 
 int main(int argc, char **argv)
 {
+	//t_stack *stack_a;
+	//t_stack *stack_b;
+
 	if (argc < 2)
 		return ft_print_error();
-	if (!is_valid_number(argc, argv))
+	if (!is_valid(argv))
 		return ft_print_error();
 	return (0);
 }
