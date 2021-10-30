@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/30 15:03:21 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/30 17:48:33 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,26 @@ B: is empty
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
-	// t_stack *stack_b;
+	t_stack *stack_b;
 
 	if (argc < 2)
 		return ft_print_error();
 	if (!is_valid(argv))
 		return ft_print_error();
 	stack_a = alloc_stack(argc, 'a');
-	// init_stack(stack_a, argv);
-	printf("A: %c, TOP: %d", stack_a->stack_name, stack_a->top);
+	stack_b = alloc_stack(argc, 'b');
+	init_stack(stack_a, argv);
+
+	int i = 0;
+
+	// Test printing stacks
+	printf("A  |  B\n");
+	while (stack_a->size > i)
+	{
+		printf("%d  |  %d\n", stack_a->numbers[i], stack_b->numbers[i]);
+		i++;
+	}
+
+	// printf("TOP value: %d", stack_a->numbers[stack_a->top]);
 	return (0);
 }
