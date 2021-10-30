@@ -10,6 +10,7 @@ LIBFT_LIB = ${LIBFT_DIR}/libft.a
 
 SOURCE_FILES = $(SOURCE_DIR)/main.c $(SOURCE_DIR)/ft_print_error.c
 SOURCE_FILES += $(SOURCE_DIR)/validate.c $(SOURCE_DIR)/create.c
+SOURCE_FILES += $(SOURCE_DIR)/utils.c
 
 
 RM = @rm -f
