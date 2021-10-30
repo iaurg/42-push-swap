@@ -1,6 +1,6 @@
 NAME = push_swap
 
-HEADER_DIR = ./includes/minitalk.h
+HEADER_DIR = ./includes/header.h
 
 SOURCE_DIR = ./src
 
@@ -9,7 +9,7 @@ LIBFT_DIR = ./libs/libft
 LIBFT_LIB = ${LIBFT_DIR}/libft.a
 
 SOURCE_FILES = $(SOURCE_DIR)/main.c $(SOURCE_DIR)/ft_print_error.c
-SOURCE_FILES += $(SOURCE_DIR)/validate.c
+SOURCE_FILES += $(SOURCE_DIR)/validate.c $(SOURCE_DIR)/create.c
 
 
 RM = @rm -f

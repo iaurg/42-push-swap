@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/30 14:06:11 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/30 15:03:21 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,20 @@ B: is empty
 */
 
 #include "../includes/header.h"
+//REMOVE IT
+#include <stdio.h>
 
 int main(int argc, char **argv)
 {
-	//t_stack *stack_a;
-	//t_stack *stack_b;
+	t_stack *stack_a;
+	// t_stack *stack_b;
 
 	if (argc < 2)
 		return ft_print_error();
 	if (!is_valid(argv))
 		return ft_print_error();
+	stack_a = alloc_stack(argc, 'a');
+	// init_stack(stack_a, argv);
+	printf("A: %c, TOP: %d", stack_a->stack_name, stack_a->top);
 	return (0);
 }
