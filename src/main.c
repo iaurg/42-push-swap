@@ -6,12 +6,12 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/30 17:48:33 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/31 16:33:37 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-TODO: Entry file and reader from args
+OK: Entry file and reader from args
 TODO: Validate with norminette
 TODO: Validate memory leaks
 TODO: Ascending order number 1,2,3,4,5,6,7,8,9,10...
@@ -37,6 +37,26 @@ B: is empty
 //REMOVE IT
 #include <stdio.h>
 
+static void print_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	int i = 0;
+	int j = 0;
+	// Test printing stacks
+	printf("A\n");
+	while (stack_a->used_size > i)
+	{
+		printf("%d\n", stack_a->numbers[i]);
+		i++;
+	}
+	printf("--------------\n");
+	printf("B\n");
+	while (stack_b->used_size > j)
+	{
+		printf("%d\n", stack_b->numbers[j]);
+		j++;
+	}
+}
+
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -46,19 +66,22 @@ int main(int argc, char **argv)
 		return ft_print_error();
 	if (!is_valid(argv))
 		return ft_print_error();
-	stack_a = alloc_stack(argc, 'a');
-	stack_b = alloc_stack(argc, 'b');
+	stack_a = alloc_stack(argc - 1, 'a');
+	stack_b = alloc_stack(argc - 1, 'b');
 	init_stack(stack_a, argv);
 
-	int i = 0;
+	print_stacks(stack_a, stack_b);
+	if (is_sorted(stack_a))
+		printf("its ordered\n");
 
-	// Test printing stacks
-	printf("A  |  B\n");
-	while (stack_a->size > i)
-	{
-		printf("%d  |  %d\n", stack_a->numbers[i], stack_b->numbers[i]);
-		i++;
-	}
+	// swap(stack_a);
+	push(stack_a, stack_b);
+	printf("\n\n");
+	print_stacks(stack_a, stack_b);
+
+	push(stack_b, stack_a);
+	printf("\n\n");
+	print_stacks(stack_a, stack_b);
 
 	// printf("TOP value: %d", stack_a->numbers[stack_a->top]);
 	return (0);
