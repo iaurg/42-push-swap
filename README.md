@@ -19,6 +19,10 @@ Made with PDF Version 5
 
 [Stack structure](https://www.programiz.com/dsa/stack)
 
+[push_swap gmartinelli1996](https://github.com/gmartinelli1996/42_push_swap)
+
+[one approach to push_swap](https://outline.com/J5tfjz)
+
 ## Notes
 
 Análise de complexidade nos permite medir o quão rápido um programa executa suas computações.
