@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/31 11:55:34 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/01 07:12:29 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int is_sorted(t_stack *stack)
 		return (true);
 	while (i < stack->size)
 	{
-		if (stack->numbers[i - 1] > stack->numbers[i])
+		if (stack->numbers[i - 1] < stack->numbers[i])
 			return (false);
 		i++;
 	}

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create.c                                           :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 13:53:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/31 15:28:00 by itaureli         ###   ########.fr       */
+/*   Created: 2021/11/01 06:42:12 by itaureli          #+#    #+#             */
+/*   Updated: 2021/11/01 07:09:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void	init_stack(t_stack *stack, char **values)
+void	parse_stack_a(t_stack *stack, char **argv, int size)
 {
 	int i;
-	int value;
+	int j;
 
 	i = 0;
-	while (i < stack->size)
+	j = size;
+
+	while (i < j)
 	{
-		value = ft_atoi(values[i + 1]);
-		stack->numbers[i] = value;
-		stack->used_size++;
+		stack->numbers[i] = ft_atoi(argv[j - i]);
+		stack->top++;
 		i++;
 	}
 }
 
-t_stack	*alloc_stack(int size, char stack_name)
+t_stack	*alloc_stack(int size)
 {
 	t_stack *stack;
 
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->used_size = 0;
+	stack->top = -1;
 	stack->size = size;
 	stack->numbers = malloc(sizeof(int) * size);
-	stack->stack_name = stack_name;
 	return (stack);
 }

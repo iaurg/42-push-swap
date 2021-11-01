@@ -8,10 +8,9 @@ LIBFT_DIR = ./libs/libft
 
 LIBFT_LIB = ${LIBFT_DIR}/libft.a
 
-SOURCE_FILES = $(SOURCE_DIR)/main.c $(SOURCE_DIR)/ft_print_error.c
-SOURCE_FILES += $(SOURCE_DIR)/validate.c $(SOURCE_DIR)/create.c
-SOURCE_FILES += $(SOURCE_DIR)/utils.c $(SOURCE_DIR)/push.c
-SOURCE_FILES += $(SOURCE_DIR)/swap.c
+SOURCE_FILES = src/main.c src/ft_print_error.c
+SOURCE_FILES += src/validate.c src/stack.c
+SOURCE_FILES += src/utils.c src/swap.c src/push.c
 
 
 RM = @rm -f
