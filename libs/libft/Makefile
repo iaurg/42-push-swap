@@ -9,6 +9,11 @@ SOURCES += ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 SOURCES += ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c
 SOURCES += ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
+# printf
+SOURCES += ft_printf.c ft_parse_flag.c ft_printf_c.c
+SOURCES += ft_printf_s.c ft_printf_p.c ft_printf_d.c
+SOURCES += ft_printf_i.c ft_printf_u.c ft_printf_x.c
+
 # Use same files from sources, but change .c to .o
 OBJECTS = ${SOURCES:.c=.o}
 
