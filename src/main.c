@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/01 07:33:44 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/03 06:54:04 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ B: is empty
 */
 
 #include "../includes/header.h"
-//REMOVE IT
-#include <stdio.h>
 
 void print_stack(t_stack *stack)
 {
@@ -43,10 +41,10 @@ void print_stack(t_stack *stack)
 	int i = stack->size - 1;
 	while(i >= 0)
 	{
-		printf("%d\n", stack->numbers[i]);
+		ft_printf("%d\n", stack->numbers[i]);
 		i--;
 	}
-	printf("------\n");
+	ft_printf("------\n");
 }
 
 int main(int argc, char **argv)
@@ -55,9 +53,9 @@ int main(int argc, char **argv)
 	t_stack *stack_b;
 
 	if (argc < 2)
-		return ft_print_error();
+		return print_error();
 	if (!is_valid(argv))
-		return ft_print_error();
+		return print_error();
 	stack_a = alloc_stack(argc - 1);
 	parse_stack_a(stack_a, argv, argc - 1);
 	if (is_sorted(stack_a))
@@ -73,13 +71,9 @@ int main(int argc, char **argv)
 
 	print_stack(stack_a);
 	swap(stack_a, 'a');
+	rotate(stack_a, 'a');
 	print_stack(stack_a);
-	print_stack(stack_b);
-
-	push(stack_a, stack_b);
-	push(stack_a, stack_b);
+	rotate(stack_a, 'a');
 	print_stack(stack_a);
-	print_stack(stack_b);
-
 	return (0);
 }
