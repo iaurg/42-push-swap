@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:15:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/01 07:25:00 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/03 06:52:24 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	swap(t_stack *stack, char stack_name)
 {
 	int holder;
+	int top;
 
 	if (stack->size < 2)
 		return ;
 	holder = stack->numbers[stack->top];
-	stack->numbers[stack->top] = stack->numbers[stack->top - 1];
-	stack->numbers[stack->top - 1] = holder;
-	if (stack_name)
-		ft_putstr_fd("swaped\n", 1);
+	top = stack->top;
+	stack->numbers[top] = stack->numbers[top - 1];
+	stack->numbers[top - 1] = holder;
+	ft_printf("s%c\n", stack_name);
 }
