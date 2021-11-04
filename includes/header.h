@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/03 06:48:51 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/04 06:35:09 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int			is_sorted(t_stack *stack);
 void		swap(t_stack *stack, char stack_name);
 void		push(t_stack *source, t_stack *dest);
 void		rotate(t_stack *stack, char stack_name);
+void	reverse_rotate(t_stack *stack, char stack_name);
 #endif
