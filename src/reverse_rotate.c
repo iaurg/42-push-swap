@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 06:32:28 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/04 06:36:31 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/05 06:34:47 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,13 @@ void	reverse_rotate(t_stack *stack, char stack_name)
 		i++;
 	}
 	stack->numbers[top] = holder;
-	ft_printf("rr%c\n", stack_name);
+	if (stack_name)
+		ft_printf("rr%c\n", stack_name);
+}
+
+void	rr_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
+{
+	reverse_rotate(stack_a, 0);
+	reverse_rotate(stack_b, 0);
+	ft_printf("rrr\n");
 }
