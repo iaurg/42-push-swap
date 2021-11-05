@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/03 06:54:04 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/05 06:36:11 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,20 @@ int main(int argc, char **argv)
 		return(0);
 	stack_b = alloc_stack((argc - 1) - stack_a->size);
 
-	/*
-	if(stack_a->size == 2 || stack_b->size == 3)
+	if(stack_a->size == 3)
 	{
-
+		ft_printf("uso algo 3");
 	}
-	*/
 
 	print_stack(stack_a);
-	swap(stack_a, 'a');
-	rotate(stack_a, 'a');
+	print_stack(stack_b);
+	push(stack_a, stack_b);
+	push(stack_a, stack_b);
+	push(stack_a, stack_b);
+	rr_reverse_rotate(stack_a, stack_b);
 	print_stack(stack_a);
-	rotate(stack_a, 'a');
-	print_stack(stack_a);
+	print_stack(stack_b);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }
