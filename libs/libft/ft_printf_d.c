@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 07:27:43 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/01 07:33:30 by itaureli         ###   ########.fr       */
+/*   Created: 2021/08/21 20:41:03 by itaureli          #+#    #+#             */
+/*   Updated: 2021/11/03 06:19:58 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "libft.h"
 
-void push(t_stack *source, t_stack *dest)
+int	ft_printf_d(int number)
 {
-	dest->size++;
-	dest->top++;
-	dest->numbers[dest->top] = source->numbers[source->top];
-	source->numbers[source->top] = 0;
-	source->top--;
-	source->size--;
+	char	*str;
+	int		len;
+
+	str = ft_itoa(number);
+	ft_putstr_fd(str, 1);
+	len = ft_strlen(str);
+	free(str);
+	return (len);
 }

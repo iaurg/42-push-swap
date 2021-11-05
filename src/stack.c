@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 07:15:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/05 06:26:39 by itaureli         ###   ########.fr       */
+/*   Created: 2021/11/01 06:42:12 by itaureli          #+#    #+#             */
+/*   Updated: 2021/11/01 07:09:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void	swap(t_stack *stack, char stack_name)
+void	parse_stack_a(t_stack *stack, char **argv, int size)
 {
-	int holder;
-	int top;
+	int i;
+	int j;
 
-	if (stack->size < 2)
-		return ;
-	holder = stack->numbers[stack->top];
-	top = stack->top;
-	stack->numbers[top] = stack->numbers[top - 1];
-	stack->numbers[top - 1] = holder;
-	if (stack_name)
-		ft_printf("s%c\n", stack_name);
+	i = 0;
+	j = size;
+
+	while (i < j)
+	{
+		stack->numbers[i] = ft_atoi(argv[j - i]);
+		stack->top++;
+		i++;
+	}
 }
 
-void	ss_swap(t_stack *stack_a, t_stack *stack_b)
+t_stack	*alloc_stack(int size)
 {
-	swap(stack_a, 0);
-	swap(stack_b, 0);
-	ft_printf("ss\n");
+	t_stack *stack;
+
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->top = -1;
+	stack->size = size;
+	stack->numbers = malloc(sizeof(int) * size);
+	return (stack);
 }

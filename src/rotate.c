@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 07:15:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/05 06:26:39 by itaureli         ###   ########.fr       */
+/*   Created: 2021/11/03 06:40:13 by itaureli          #+#    #+#             */
+/*   Updated: 2021/11/05 06:35:32 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void	swap(t_stack *stack, char stack_name)
+void	rotate(t_stack *stack, char stack_name)
 {
 	int holder;
 	int top;
+	int i;
 
 	if (stack->size < 2)
 		return ;
-	holder = stack->numbers[stack->top];
 	top = stack->top;
-	stack->numbers[top] = stack->numbers[top - 1];
-	stack->numbers[top - 1] = holder;
+	holder = stack->numbers[top];
+	i = stack->size;
+	while (i > 0)
+	{
+		stack->numbers[i] = stack->numbers[i - 1];
+		i--;
+	}
+	stack->numbers[0] = holder;
 	if (stack_name)
-		ft_printf("s%c\n", stack_name);
+		ft_printf("r%c\n", stack_name);
 }
 
-void	ss_swap(t_stack *stack_a, t_stack *stack_b)
+void	rr_rotate(t_stack *stack_a, t_stack *stack_b)
 {
-	swap(stack_a, 0);
-	swap(stack_b, 0);
-	ft_printf("ss\n");
+	rotate(stack_a, 0);
+	rotate(stack_b, 0);
+	ft_printf("rrr\n");
 }

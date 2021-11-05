@@ -23,6 +23,12 @@ Made with PDF Version 5
 
 [one approach to push_swap](https://outline.com/J5tfjz)
 
+[push swap radix](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+
+[Algorithm logic](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+
+[korean push notion](https://www.notion.so/Push_swap-21758af851874d70a09c854ae200a0ae)
+
 ## Notes
 
 Análise de complexidade nos permite medir o quão rápido um programa executa suas computações.

@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 13:53:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/31 15:28:00 by itaureli         ###   ########.fr       */
+/*   Created: 2021/11/04 06:32:28 by itaureli          #+#    #+#             */
+/*   Updated: 2021/11/05 06:34:47 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void	init_stack(t_stack *stack, char **values)
+void	reverse_rotate(t_stack *stack, char stack_name)
 {
+	int holder;
+	int top;
 	int i;
-	int value;
 
+	if (stack->size < 2)
+		return ;
+	top = stack->top;
+	holder = stack->numbers[0];
 	i = 0;
 	while (i < stack->size)
 	{
-		value = ft_atoi(values[i + 1]);
-		stack->numbers[i] = value;
-		stack->used_size++;
+		stack->numbers[i] = stack->numbers[i + 1];
 		i++;
 	}
+	stack->numbers[top] = holder;
+	if (stack_name)
+		ft_printf("rr%c\n", stack_name);
 }
 
-t_stack	*alloc_stack(int size, char stack_name)
+void	rr_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *stack;
-
-	stack = malloc(sizeof(t_stack));
-	if (!stack)
-		return (NULL);
-	stack->used_size = 0;
-	stack->size = size;
-	stack->numbers = malloc(sizeof(int) * size);
-	stack->stack_name = stack_name;
-	return (stack);
+	reverse_rotate(stack_a, 0);
+	reverse_rotate(stack_b, 0);
+	ft_printf("rrr\n");
 }

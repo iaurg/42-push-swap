@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/31 16:33:37 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/05 06:36:11 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,17 @@ B: is empty
 */
 
 #include "../includes/header.h"
-//REMOVE IT
-#include <stdio.h>
 
-static void print_stacks(t_stack *stack_a, t_stack *stack_b)
+void print_stack(t_stack *stack)
 {
-	int i = 0;
-	int j = 0;
-	// Test printing stacks
-	printf("A\n");
-	while (stack_a->used_size > i)
+
+	int i = stack->size - 1;
+	while(i >= 0)
 	{
-		printf("%d\n", stack_a->numbers[i]);
-		i++;
+		ft_printf("%d\n", stack->numbers[i]);
+		i--;
 	}
-	printf("--------------\n");
-	printf("B\n");
-	while (stack_b->used_size > j)
-	{
-		printf("%d\n", stack_b->numbers[j]);
-		j++;
-	}
+	ft_printf("------\n");
 }
 
 int main(int argc, char **argv)
@@ -63,26 +53,29 @@ int main(int argc, char **argv)
 	t_stack *stack_b;
 
 	if (argc < 2)
-		return ft_print_error();
+		return print_error();
 	if (!is_valid(argv))
-		return ft_print_error();
-	stack_a = alloc_stack(argc - 1, 'a');
-	stack_b = alloc_stack(argc - 1, 'b');
-	init_stack(stack_a, argv);
-
-	print_stacks(stack_a, stack_b);
+		return print_error();
+	stack_a = alloc_stack(argc - 1);
+	parse_stack_a(stack_a, argv, argc - 1);
 	if (is_sorted(stack_a))
-		printf("its ordered\n");
+		return(0);
+	stack_b = alloc_stack((argc - 1) - stack_a->size);
 
-	// swap(stack_a);
+	if(stack_a->size == 3)
+	{
+		ft_printf("uso algo 3");
+	}
+
+	print_stack(stack_a);
+	print_stack(stack_b);
 	push(stack_a, stack_b);
-	printf("\n\n");
-	print_stacks(stack_a, stack_b);
-
-	push(stack_b, stack_a);
-	printf("\n\n");
-	print_stacks(stack_a, stack_b);
-
-	// printf("TOP value: %d", stack_a->numbers[stack_a->top]);
+	push(stack_a, stack_b);
+	push(stack_a, stack_b);
+	rr_reverse_rotate(stack_a, stack_b);
+	print_stack(stack_a);
+	print_stack(stack_b);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }
