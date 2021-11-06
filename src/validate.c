@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/30 14:09:27 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/06 08:19:48 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ OK: Not allow duplicates
 TODO: Review pdf rules
 OK: Not allow strings
 */
-
-// Remove it
-#include <stdio.h>
 
 static int	is_valid_number(char **argv)
 {
