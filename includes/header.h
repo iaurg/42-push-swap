@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/05 06:35:22 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/06 08:43:17 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void		rotate(t_stack *stack, char stack_name);
 void		rr_rotate(t_stack *stack_a, t_stack *stack_b);
 void		reverse_rotate(t_stack *stack, char stack_name);
 void		rr_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+void		size_3(t_stack *stack);
 #endif

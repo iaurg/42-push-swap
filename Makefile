@@ -12,6 +12,7 @@ SOURCE_FILES = src/main.c src/print_error.c
 SOURCE_FILES += src/validate.c src/stack.c
 SOURCE_FILES += src/utils.c src/swap.c src/push.c
 SOURCE_FILES += src/rotate.c src/reverse_rotate.c
+SOURCE_FILES += src/size_3.c
 
 RM = @rm -f
 
