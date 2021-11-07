@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/07 09:43:47 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/07 12:01:32 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ of the stack (be careful about the order)
 A: contains a random number of either positive or negative numbers without
 any duplicates.
 B: is empty
+
+Array aux to hold ordered numbers
 */
 
 #include "../includes/header.h"
@@ -51,6 +53,7 @@ int main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
+	t_stack *stack_aux;
 
 	if (argc < 2)
 		return print_error();
@@ -61,7 +64,7 @@ int main(int argc, char **argv)
 	if (is_sorted(stack_a))
 		return(0);
 	stack_b = alloc_stack((argc - 1) - stack_a->size);
-
+	stack_aux = alloc_stack((argc - 1) - stack_a->size);
 	if (stack_a->size < 3)
 		while (!is_sorted(stack_a))
 			swap(stack_a, 'a');
@@ -72,9 +75,12 @@ int main(int argc, char **argv)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
 	else
+	{
 		while (!is_sorted(stack_a))
 			bad_sort_numbers(stack_a, stack_b);
+	}
 	free(stack_a);
 	free(stack_b);
+	free(stack_aux);
 	return (0);
 }

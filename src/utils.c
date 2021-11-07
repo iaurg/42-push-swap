@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/07 08:20:20 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/07 13:00:49 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 	{
 		while (stack->size - index > 0)
 		{
-			// ft_printf("size: %d, index: %d \n", stack->size, index);
 			if (index == (stack->size - 1))
 				return ;
 			rotate(stack, stack_name);
@@ -63,5 +62,33 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 			reverse_rotate(stack, stack_name);
 			index--;
 		}
+	}
+}
+
+// Try bubble
+void	sort_array(t_stack *stack)
+{
+	int	step;
+	int	left_temp;
+	int size;
+	int swapped;
+
+	swapped = 1;
+	size = stack->size - 1;
+	step = 0;
+	while (swapped)
+	{
+		while (step < size - 1)
+		{
+			if (stack->numbers[step] > stack->numbers[step + 1])
+			{
+				left_temp = stack->numbers[step];
+				stack->numbers[step] = stack->numbers[step + 1];
+				stack->numbers[step + 1] = left_temp;
+			}
+			step++;
+		}
+		step = 0;
+		size--;
 	}
 }
