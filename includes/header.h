@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/07 08:12:38 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/07 09:43:42 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void		size_3(t_stack *stack);
 void		size_5(t_stack *stack_a, t_stack *stack_b);
 int			smallest_in_stack(t_stack *stack);
 void		move_nbr_top(t_stack *stack, int index, char stack_name);
+void		bad_sort_numbers(t_stack *stack_a, t_stack *stack_b);
 #endif

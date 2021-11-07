@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/06 16:12:35 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/07 09:43:47 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ int main(int argc, char **argv)
 	else if (stack_a->size == 4 || stack_a->size == 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
-
+	else
+		while (!is_sorted(stack_a))
+			bad_sort_numbers(stack_a, stack_b);
 	free(stack_a);
 	free(stack_b);
 	return (0);
