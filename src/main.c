@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/07 12:01:32 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/08 06:43:11 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ int main(int argc, char **argv)
 	if (is_sorted(stack_a))
 		return(0);
 	stack_b = alloc_stack((argc - 1) - stack_a->size);
-	stack_aux = alloc_stack((argc - 1) - stack_a->size);
+	stack_aux = alloc_stack((argc - 1));
+	// Avoid change A
+	stack_aux = stack_a;
+	sort_array(stack_aux);
+
 	if (stack_a->size < 3)
 		while (!is_sorted(stack_a))
 			swap(stack_a, 'a');
@@ -74,13 +78,15 @@ int main(int argc, char **argv)
 	else if (stack_a->size == 4 || stack_a->size == 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
+	/*
 	else
-	{
 		while (!is_sorted(stack_a))
-			bad_sort_numbers(stack_a, stack_b);
-	}
+			sort_algo(stack_a, stack_b, stack_aux);
+	*/
+	sort_algo(stack_a, stack_b, stack_aux);
+	print_stack(stack_a);
+	print_stack(stack_b);
 	free(stack_a);
 	free(stack_b);
-	free(stack_aux);
 	return (0);
 }

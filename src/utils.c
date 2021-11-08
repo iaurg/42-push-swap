@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/07 13:00:49 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/08 06:24:57 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 	}
 }
 
-// Try bubble
+// Try bubble sort while swap
 void	sort_array(t_stack *stack)
 {
 	int	step;
@@ -75,20 +75,20 @@ void	sort_array(t_stack *stack)
 
 	swapped = 1;
 	size = stack->size - 1;
-	step = 0;
 	while (swapped)
 	{
-		while (step < size - 1)
+		step = 0;
+		swapped = 0;
+		while (step < size)
 		{
 			if (stack->numbers[step] > stack->numbers[step + 1])
 			{
 				left_temp = stack->numbers[step];
 				stack->numbers[step] = stack->numbers[step + 1];
 				stack->numbers[step + 1] = left_temp;
+				swapped = 1;
 			}
 			step++;
 		}
-		step = 0;
-		size--;
 	}
 }
