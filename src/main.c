@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/08 06:43:11 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/09 22:09:44 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int main(int argc, char **argv)
 		return(0);
 	stack_b = alloc_stack((argc - 1) - stack_a->size);
 	stack_aux = alloc_stack((argc - 1));
-	// Avoid change A
-	stack_aux = stack_a;
-	sort_array(stack_aux);
+	parse_stack_a(stack_aux, argv, (argc - 1));
 
+	// Avoid change A when copy
+	sort_array(stack_aux);
 	if (stack_a->size < 3)
 		while (!is_sorted(stack_a))
 			swap(stack_a, 'a');
@@ -83,10 +83,15 @@ int main(int argc, char **argv)
 		while (!is_sorted(stack_a))
 			sort_algo(stack_a, stack_b, stack_aux);
 	*/
-	sort_algo(stack_a, stack_b, stack_aux);
+	// sort_algo(stack_a, stack_b, stack_aux);
+	ft_printf("AUX: \n");
+	print_stack(stack_aux);
+	ft_printf("A: \n");
 	print_stack(stack_a);
-	print_stack(stack_b);
+	if (binary_search(stack_aux, 5))
+		ft_printf("found it");
 	free(stack_a);
+	free(stack_aux);
 	free(stack_b);
 	return (0);
 }
