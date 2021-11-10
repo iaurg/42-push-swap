@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/08 06:24:57 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/09 22:08:07 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,25 @@ void	sort_array(t_stack *stack)
 			step++;
 		}
 	}
+}
+
+int binary_search(t_stack *stack, int nbt_to_find)
+{
+	int first;
+	int last;
+	int middle;
+
+	first = 0;
+	last = stack->size - 1;
+	middle = (first + last) / 2;
+	while (first <= last) {
+		if (stack->numbers[middle] < nbt_to_find)
+			first = middle + 1;
+		else if (stack->numbers[middle] == nbt_to_find)
+			return 1;
+		else
+			last = middle - 1;
+		middle = (first + last)/2;
+	}
+	return 0;
 }
