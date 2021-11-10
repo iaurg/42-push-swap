@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/09 22:09:44 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/10 06:46:51 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,18 @@ int main(int argc, char **argv)
 		while (!is_sorted(stack_a))
 			sort_algo(stack_a, stack_b, stack_aux);
 	*/
-	// sort_algo(stack_a, stack_b, stack_aux);
-	ft_printf("AUX: \n");
-	print_stack(stack_aux);
-	ft_printf("A: \n");
-	print_stack(stack_a);
+	sort_algo(stack_a, stack_b, stack_aux);
+	/*
 	if (binary_search(stack_aux, 5))
 		ft_printf("found it");
+	*/
+	ft_printf("A: \n");
+	print_stack(stack_a);
+	ft_printf("B: \n");
+	print_stack(stack_b);
+	ft_printf("AUX: \n");
+	print_stack(stack_aux);
+
 	free(stack_a);
 	free(stack_aux);
 	free(stack_b);
