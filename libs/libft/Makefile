@@ -8,6 +8,7 @@ SOURCES += ft_isdigit.c ft_atol.c
 SOURCES += ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 SOURCES += ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c
 SOURCES += ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SOURCES += ft_memcpy.c
 
 # printf
 SOURCES += ft_printf.c ft_parse_flag.c ft_printf_c.c

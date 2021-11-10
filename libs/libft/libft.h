@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 07:38:35 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/03 06:21:59 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:34:20 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 // printf
 int			ft_printf(const char *type, ...);
 int			ft_parse_flag(const char *format, va_list ap);
