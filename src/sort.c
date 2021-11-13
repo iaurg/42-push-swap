@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 18:47:28 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:13:37 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,15 @@ void	split_chunk(t_stack *stack_a, t_stack *stack_b, int mid_number)
 	}
 }
 
+/*
+Need to review this logic
+
+What I need to do after filter all these number on stack B?
+I need some sorting after sending to B?
+
+I'm moving something wrong order to be, review post
+*/
+
 void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 {
 	int mid_number;
@@ -70,10 +79,11 @@ void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 	last = stack_aux->size;
 	middle = (first + last) / 2;
 	mid_number = stack_aux->numbers[middle];
-	// ft_printf("mid_number: %d \n", mid_number);
 
 	while (middle < (last - 1))
 	{
+		ft_printf("mid_number: %d \n", mid_number);
+
 		if (last - middle == 3)
 		// [11,12,13]
 		{
@@ -81,7 +91,6 @@ void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 			middle = (middle + last)/2;
 			mid_number = stack_aux->numbers[middle];
 			split_chunk(stack_a, stack_b, mid_number);
-			break;
 		}
 		else if (last - middle > 3)
 		{
@@ -92,5 +101,7 @@ void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 		}
 		else
 			break;
+		ft_printf("B: \n");
+		print_stack_2(stack_b);
 	}
 }

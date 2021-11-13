@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 18:45:05 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:08:17 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,16 @@ int main(int argc, char **argv)
 
 	// sort_algo(stack_a, stack_b, stack_aux);
 
+
+	//ft_printf("AUX: \n");
+	//print_stack(stack_aux);
 	/*
-	ft_printf("AUX: \n");
-	print_stack(stack_aux);
 	ft_printf("A: \n");
 	print_stack(stack_a);
 	ft_printf("B: \n");
 	print_stack(stack_b);
 	*/
+
 	free(stack_a->numbers);
 	free(stack_b->numbers);
 	free(stack_aux->numbers);
