@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 17:18:09 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:45:05 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Array aux to hold ordered numbers
 
 #include "../includes/header.h"
 
-/*
+
 void print_stack(t_stack *stack)
 {
 
@@ -49,7 +49,7 @@ void print_stack(t_stack *stack)
 	}
 	ft_printf("------\n");
 }
-*/
+
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -68,12 +68,12 @@ int main(int argc, char **argv)
 	stack_aux = alloc_stack((argc - 1), argc - 1);
 	//ft_printf("sizeb: %d, sizea: %d", stack_b->size, stack_a->size);
 	//return 1;
-	/*
+
 	parse_stack_a(stack_aux, argv, (argc - 1));
 	sort_array(stack_aux);
-	*/
+
 	// Avoid change A when copy
-	//
+
 	if (stack_a->size < 3)
 		while (!is_sorted(stack_a))
 			swap(stack_a, 'a');
@@ -83,18 +83,23 @@ int main(int argc, char **argv)
 	else if (stack_a->size == 4 || stack_a->size == 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
+	/*
 	else
 		while (!is_sorted(stack_a))
-			bad_sort_numbers(stack_a, stack_b);
+			// bad_sort_numbers(stack_a, stack_b);
+			sort_algo(stack_a, stack_b, stack_aux);
+	*/
+	sort_algo(stack_a, stack_b, stack_aux);
 	/*
 	if (binary_search(stack_aux, 5))
 		ft_printf("found it");
-		ft_printf("AUX: \n");
-		print_stack(stack_aux);
 	*/
 
 	// sort_algo(stack_a, stack_b, stack_aux);
+
 	/*
+	ft_printf("AUX: \n");
+	print_stack(stack_aux);
 	ft_printf("A: \n");
 	print_stack(stack_a);
 	ft_printf("B: \n");
