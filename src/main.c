@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/11 22:11:15 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:18:09 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Array aux to hold ordered numbers
 
 #include "../includes/header.h"
 
+/*
 void print_stack(t_stack *stack)
 {
 
@@ -48,7 +49,7 @@ void print_stack(t_stack *stack)
 	}
 	ft_printf("------\n");
 }
-
+*/
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -59,16 +60,20 @@ int main(int argc, char **argv)
 		return print_error();
 	if (!is_valid(argv))
 		return print_error();
-	stack_a = alloc_stack(argc - 1);
+	stack_a = alloc_stack(argc - 1, argc - 1);
 	parse_stack_a(stack_a, argv, argc - 1);
 	if (is_sorted(stack_a))
 		return(0);
-	stack_b = alloc_stack((argc - 1) - stack_a->size);
-	stack_aux = alloc_stack((argc - 1));
+	stack_b = alloc_stack((argc - 1) - stack_a->size, argc - 1);
+	stack_aux = alloc_stack((argc - 1), argc - 1);
+	//ft_printf("sizeb: %d, sizea: %d", stack_b->size, stack_a->size);
+	//return 1;
+	/*
 	parse_stack_a(stack_aux, argv, (argc - 1));
-
-	// Avoid change A when copy
 	sort_array(stack_aux);
+	*/
+	// Avoid change A when copy
+	//
 	if (stack_a->size < 3)
 		while (!is_sorted(stack_a))
 			swap(stack_a, 'a');
@@ -78,27 +83,26 @@ int main(int argc, char **argv)
 	else if (stack_a->size == 4 || stack_a->size == 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
-	/*
 	else
 		while (!is_sorted(stack_a))
-			sort_algo(stack_a, stack_b, stack_aux);
-	*/
+			bad_sort_numbers(stack_a, stack_b);
 	/*
 	if (binary_search(stack_aux, 5))
 		ft_printf("found it");
+		ft_printf("AUX: \n");
+		print_stack(stack_aux);
 	*/
-	ft_printf("AUX: \n");
-	print_stack(stack_aux);
-	sort_algo(stack_a, stack_b, stack_aux);
-	sort_algo(stack_a, stack_b, stack_aux);
-	sort_algo(stack_a, stack_b, stack_aux);
-	sort_algo(stack_a, stack_b, stack_aux);
-	sort_algo(stack_a, stack_b, stack_aux);
+
+	// sort_algo(stack_a, stack_b, stack_aux);
+	/*
 	ft_printf("A: \n");
 	print_stack(stack_a);
 	ft_printf("B: \n");
 	print_stack(stack_b);
-
+	*/
+	free(stack_a->numbers);
+	free(stack_b->numbers);
+	free(stack_aux->numbers);
 	free(stack_a);
 	free(stack_aux);
 	free(stack_b);

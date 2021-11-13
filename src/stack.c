@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:42:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/01 07:09:08 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:11:04 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	parse_stack_a(t_stack *stack, char **argv, int size)
 	}
 }
 
-t_stack	*alloc_stack(int size)
+t_stack	*alloc_stack(int size, int start_size)
 {
 	t_stack *stack;
 
@@ -37,6 +37,8 @@ t_stack	*alloc_stack(int size)
 		return (NULL);
 	stack->top = -1;
 	stack->size = size;
-	stack->numbers = malloc(sizeof(int) * size);
+	stack->numbers = malloc(sizeof(int) * start_size);
+	if (!stack->numbers)
+		return (NULL);
 	return (stack);
 }
