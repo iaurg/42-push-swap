@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/14 17:24:23 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:22:30 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int main(int argc, char **argv)
 	else if (stack_a->size == 4 || stack_a->size == 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
+	sort_algo(stack_a, stack_b, stack_aux);
 	/*
 	else
 		while (!is_sorted(stack_a))
 			// bad_sort_numbers(stack_a, stack_b);
 			sort_algo(stack_a, stack_b, stack_aux);
 	*/
-	ft_printf("topA: %d, 0A: %d", stack_a->numbers[stack_a->top], stack_a->numbers[0]);
-	sort_algo(stack_a, stack_b, stack_aux);
+	// ft_printf("topA: %d, 0A: %d", stack_a->numbers[stack_a->top], stack_a->numbers[0]);
 	/*
 	if (binary_search(stack_aux, 5))
 		ft_printf("found it");
@@ -102,11 +102,12 @@ int main(int argc, char **argv)
 	//ft_printf("AUX: \n");
 	//print_stack(stack_aux);
 
+	/*
 	ft_printf("A: \n");
 	print_stack(stack_a);
 	ft_printf("B: \n");
 	print_stack(stack_b);
-
+	*/
 
 	free(stack_a->numbers);
 	free(stack_b->numbers);
