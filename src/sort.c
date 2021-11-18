@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/17 18:54:56 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/17 22:10:43 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,33 @@ get move com base no tamanho da array
 Funções auxiliares, maior numero, menor numero, get index, move to top
 */
 
+void	prepare_a(t_stack *stack_a, t_stack *stack_b, int max, int min)
+{
+	int moves;
+
+	moves = stack_a->size + 1;
+	while (moves)
+	{
+		if (stack_a->numbers[stack_a->top] == max
+			|| stack_a->numbers[stack_a->top] == min)
+			rotate(stack_a,'a');
+		else
+			push(stack_a, stack_b, 'a');
+		moves--;
+	}
+}
+
 void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 {
-	int mid_number;
-	int first;
-	int last;
-	int middle;
+	int max_number;
+	int min_number;
 
-	first = 0;
-	last = stack_aux->size;
-	middle = 0;
-	while (middle < (last - 1) && !is_sorted(stack_a))
-	{
-		middle = (middle + last)/2;
-		mid_number = stack_aux->numbers[middle];
-		// ft_printf("mid_number: %d \n", mid_number);
-		split_chunk(stack_a, stack_b, mid_number);
-	}
+	max_number = stack_aux->numbers[stack_aux->size - 1];
+	min_number = stack_aux->numbers[0];
+	prepare_a(stack_a, stack_b, max_number, min_number);
+
+	print_stack_2(stack_a);
+	print_stack_2(stack_b);
 }
 
 void sort(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
