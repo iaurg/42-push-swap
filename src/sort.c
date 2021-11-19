@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/17 22:10:43 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/19 06:38:20 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ get move com base no tamanho da array
 Funções auxiliares, maior numero, menor numero, get index, move to top
 */
 
-void	prepare_a(t_stack *stack_a, t_stack *stack_b, int max, int min)
+void	prepare_a(t_stack *stack_a, t_stack *stack_b, int max, int min, int mid)
 {
 	int moves;
 
@@ -59,23 +59,59 @@ void	prepare_a(t_stack *stack_a, t_stack *stack_b, int max, int min)
 		if (stack_a->numbers[stack_a->top] == max
 			|| stack_a->numbers[stack_a->top] == min)
 			rotate(stack_a,'a');
+		else if (stack_a->numbers[stack_a->top] <= mid)
+			push(stack_a, stack_b, 'b');
 		else
-			push(stack_a, stack_b, 'a');
+			rotate(stack_a,'a');
 		moves--;
 	}
+	while (!is_sorted(stack_a))
+	{
+		if (stack_a->numbers[stack_a->top] == max
+			|| stack_a->numbers[stack_a->top] == min)
+			rotate(stack_a,'a');
+		else
+			push(stack_a, stack_b, 'b');
+	}
+}
+
+void send_to_a(t_stack *stack_a, t_stack *stack_b)
+{
+	int i;
+	int moves;
+	int top_b;
+
+	top_b = stack_b->top;
+	i = top_b;
+	moves = stack_a->size + stack_b->size;
+
+	while (i >= 0)
+	{
+		if (i >= top_b / 2)
+		{
+
+		}
+		i--;
+	}
+}
+
+void iterate_into_b(t_stack *stack_a, t_stack *stack_b)
+{
+	while (stack_b->top >= 0)
+		send_to_a(stack_a, stack_b);
 }
 
 void	sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 {
 	int max_number;
 	int min_number;
+	int mid_number;
 
 	max_number = stack_aux->numbers[stack_aux->size - 1];
 	min_number = stack_aux->numbers[0];
-	prepare_a(stack_a, stack_b, max_number, min_number);
-
-	print_stack_2(stack_a);
-	print_stack_2(stack_b);
+	mid_number = stack_aux->numbers[stack_aux->size/2];
+	prepare_a(stack_a, stack_b, max_number, min_number, mid_number);
+	iterate_into_b(stack_a, stack_b);
 }
 
 void sort(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
@@ -89,5 +125,6 @@ void sort(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux)
 	else if (stack_a->size <= 5)
 		while (!is_sorted(stack_a))
 			size_5(stack_a, stack_b);
-	sort_algo(stack_a, stack_b, stack_aux);
+	else
+		sort_algo(stack_a, stack_b, stack_aux);
 }
