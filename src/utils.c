@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 17:01:56 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:39:03 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,14 @@ int	smallest_in_stack(t_stack *stack)
 
 void	move_nbr_top(t_stack *stack, int index, char stack_name)
 {
-	if (index > (stack->size / 2))
+	int size;
+
+	size = stack->size;
+	if (index > (size / 2))
 	{
-		while (stack->size - index > 0)
+		while (size - index > 0)
 		{
-			if (index == (stack->size - 1))
+			if (index == (size - 1))
 				return ;
 			rotate(stack, stack_name);
 			index++;
@@ -93,23 +96,43 @@ void	sort_array(t_stack *stack)
 	}
 }
 
-int binary_search(t_stack *stack, int nbt_to_find)
+/*
+Get a number and a stack and return index of this number on stack
+*/
+int	get_index(t_stack *stack, int nbr)
 {
-	int first;
-	int last;
-	int middle;
-
-	first = 0;
-	last = stack->size - 1;
-	middle = (first + last) / 2;
-	while (first <= last) {
-		if (stack->numbers[middle] < nbt_to_find)
-			first = middle + 1;
-		else if (stack->numbers[middle] == nbt_to_find)
-			return 1;
-		else
-			last = middle - 1;
-		middle = (first + last)/2;
+	int index;
+	int found_index;
+	index = stack->size - 1;
+	found_index = 0;
+	while (index >= 0)
+	{
+		if (stack->numbers[index] == nbr)
+		{
+			found_index = index;
+			break;
+		}
+		index--;
 	}
-	return 0;
+	return found_index;
+}
+
+void	normalize_stack(t_stack *stack, t_stack *stack_aux)
+{
+	int i;
+	int j;
+	i = 0;
+	j = 0;
+
+	while (i <= stack->size - 1)
+	{
+		while (j <= stack_aux->size - 1)
+		{
+			if (stack->numbers[i] == stack_aux->numbers[j])
+				stack->numbers[i] = j;
+			j++;
+		}
+		j = 0;
+		i++;
+	}
 }

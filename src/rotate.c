@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 06:40:13 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 17:09:17 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:29:23 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rotate(t_stack *stack, char stack_name)
 		return ;
 	top = stack->top;
 	holder = stack->numbers[top];
-	i = stack->size;
+	i = stack->size - 1;
 	while (i > 0)
 	{
 		stack->numbers[i] = stack->numbers[i - 1];

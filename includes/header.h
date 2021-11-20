@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/17 17:51:35 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:34:12 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ void		size_3(t_stack *stack);
 void		size_5(t_stack *stack_a, t_stack *stack_b);
 int			smallest_in_stack(t_stack *stack);
 void		move_nbr_top(t_stack *stack, int index, char stack_name);
-void		bad_sort_numbers(t_stack *stack_a, t_stack *stack_b);
 void		sort_array(t_stack *stack);
-void		sort_algo(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux);
-int			binary_search(t_stack *stack, int nbt_to_find);
-void		sort(t_stack *stack_a, t_stack *stack_b, t_stack *stack_aux);
+void		sort(t_stack *stack_a, t_stack *stack_b);
+void		normalize_stack(t_stack *stack, t_stack *stack_aux);
 #endif
