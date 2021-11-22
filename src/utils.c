@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/20 19:39:03 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:27:18 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,10 @@ void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 		while (j <= stack_aux->size - 1)
 		{
 			if (stack->numbers[i] == stack_aux->numbers[j])
+			{
 				stack->numbers[i] = j;
+				break;
+			}
 			j++;
 		}
 		j = 0;
