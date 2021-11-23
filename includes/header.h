@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:34:06 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/20 19:34:12 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:25:23 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,6 @@ void		move_nbr_top(t_stack *stack, int index, char stack_name);
 void		sort_array(t_stack *stack);
 void		sort(t_stack *stack_a, t_stack *stack_b);
 void		normalize_stack(t_stack *stack, t_stack *stack_aux);
+void		convert_to_binary (t_stack *stack);
+int			biggest_in_stack(t_stack *stack);
 #endif
