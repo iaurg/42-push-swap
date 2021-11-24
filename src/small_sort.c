@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 08:37:44 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 07:07:04 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
 void	size_3(t_stack *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:00:10 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 07:06:28 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
 int	print_error(void)
 {

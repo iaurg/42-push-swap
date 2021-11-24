@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 07:48:40 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ B: is empty
 Array aux to hold ordered numbers
 */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {

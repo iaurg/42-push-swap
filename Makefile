@@ -1,6 +1,6 @@
 NAME = push_swap
 
-HEADER_DIR = ./includes/header.h
+HEADER_DIR = ./includes/push_swap.h
 
 SOURCE_DIR = ./src
 
