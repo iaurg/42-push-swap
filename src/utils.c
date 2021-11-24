@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/23 08:40:37 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:42:53 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,6 @@ int	smallest_in_stack(t_stack *stack)
 		i++;
 	}
 	return smallest_index;
-}
-
-int	biggest_in_stack(t_stack *stack)
-{
-	int i;
-	int biggest_index;
-
-	i = 0;
-	biggest_index = 0;
-	while (i < stack->size)
-	{
-		if (stack->numbers[biggest_index] < stack->numbers[i])
-			biggest_index = i;
-		i++;
-	}
-	return biggest_index;
 }
 
 void	move_nbr_top(t_stack *stack, int index, char stack_name)
@@ -152,39 +136,6 @@ void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 			j++;
 		}
 		j = 0;
-		i++;
-	}
-}
-
-int	int_to_binary(unsigned int number)
-{
-	int		i;
-	int		k;
-	i = 3;
-	while (i > 0)
-	{
-		k = number >> i;
-		i--;
-	}
-	return k;
-}
-
-int check_zero_position (int number, int position)
-{
-	ft_printf("Nb: %d \n", number >> position);
-	if (number >> position == 0)
-		return 1;
-	return 0;
-}
-
-void convert_to_binary (t_stack *stack)
-{
-	int i;
-
-	i = 0;
-	while (i <= stack->size - 1)
-	{
-		stack->numbers[i] = int_to_binary(stack->numbers[i]);
 		i++;
 	}
 }
