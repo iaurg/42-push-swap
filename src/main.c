@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 07:06:14 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 07:48:40 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int	main(int argc, char **argv)
 	sort(stack_a, stack_b);
 	free(stack_a->numbers);
 	free(stack_b->numbers);
+	free(stack_aux->numbers);
 	free(stack_a);
 	free(stack_b);
+	free(stack_aux);
 	return (0);
 }

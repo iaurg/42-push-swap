@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 07:23:55 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 07:47:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	count_order_numbers(t_stack *stack)
 
 	count = 0;
 	len = 0;
-	while (len <= stack->size)
+	while (len <= stack->size - 1)
 	{
 		if (stack->numbers[len] == len)
 			count++;
