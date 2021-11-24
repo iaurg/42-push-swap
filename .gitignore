@@ -1,3 +1,4 @@
 *.o
 *.a
 push_swap
+pyviz.py
