@@ -27,7 +27,7 @@ Made with PDF Version 5
 
 [Algorithm logic](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
-[korean push notion](https://www.notion.so/Push_swap-21758af851874d70a09c854ae200a0ae)
+[push notion](https://www.notion.so/Push_swap-21758af851874d70a09c854ae200a0ae)
 
 ## Notes
 
