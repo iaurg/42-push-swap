@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/23 08:50:20 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:41:39 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,45 @@
 
 int number_len(int number)
 {
-	int len=!number;
-	while (number)
+	int count;
+	count = 0;
+	while ((number >> count) != 0)
+		count++;
+	return count;
+}
+
+int count_order_numbers(t_stack *stack)
+{
+	int	len;
+	int	count;
+
+	count = 0;
+	len = 0;
+	while (len <= stack->size)
 	{
-		 len++;
-		 number/=10;
+		if (stack->numbers[len] == len)
+			count++;
+		else
+			count = 0;
+		len++;
 	}
-	return len;
+	return (count);
 }
 
 int sort_algo_radix(t_stack *stack_a, t_stack *stack_b, int right_shift)
 {
 	int	i;
 	int	len;
-	// int	limit;
-	int biggest_number;
+	int	limit;
 
-	biggest_number = stack_a->numbers[biggest_in_stack(stack_a)];
-	if (right_shift > number_len(biggest_number) || is_sorted(stack_a))
+	/*
+	Hold recursion and send all back to A if is already sorted or shift is greater
+	Right shift only certain number of bytes
+	1010 >> 0 = 1010
+	1010 >> 1 = 101
+	1010 >> 2 = 10
+	*/
+	if (right_shift > number_len(stack_a->size - 1) || is_sorted(stack_a))
 	{
 		while (stack_b->size > 0)
 			push(stack_b, stack_a, 'a');
@@ -39,17 +60,19 @@ int sort_algo_radix(t_stack *stack_a, t_stack *stack_b, int right_shift)
 	}
 	i = 0;
 	len = stack_a->size;
-	while (i < len && !is_sorted(stack_a))
+	limit = count_order_numbers(stack_a);
+	while (i < len - limit && !is_sorted(stack_a))
 	{
-		if (!(stack_a->numbers[i] >> right_shift & 1))
-			push(stack_a, stack_b, 'b');
-		else
+		if ((stack_a->numbers[stack_a->top] >> right_shift & 1) == 1)
 			rotate(stack_a, 'a');
+		else
+			push(stack_a, stack_b, 'b');
 		i++;
 	}
 	i = 0;
 	len = stack_b->size;
-	while (i < len)
+	limit = count_order_numbers(stack_a);
+	while (i < len  - limit)
 	{
 		push(stack_b, stack_a, 'a');
 		i++;
