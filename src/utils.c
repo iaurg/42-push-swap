@@ -6,18 +6,18 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/23 21:42:53 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 07:26:05 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	if(stack->size == 1 || stack->size == 0)
+	if (stack->size == 1 || stack->size == 0)
 		return (true);
 	while (i < stack->size)
 	{
@@ -30,8 +30,8 @@ int is_sorted(t_stack *stack)
 
 int	smallest_in_stack(t_stack *stack)
 {
-	int i;
-	int smallest_index;
+	int	i;
+	int	smallest_index;
 
 	i = 0;
 	smallest_index = 0;
@@ -41,12 +41,12 @@ int	smallest_in_stack(t_stack *stack)
 			smallest_index = i;
 		i++;
 	}
-	return smallest_index;
+	return (smallest_index);
 }
 
 void	move_nbr_top(t_stack *stack, int index, char stack_name)
 {
-	int size;
+	int	size;
 
 	size = stack->size;
 	if (index > (size / 2))
@@ -59,7 +59,8 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 			index++;
 		}
 	}
-	else {
+	else
+	{
 		while (index >= 0)
 		{
 			reverse_rotate(stack, stack_name);
@@ -73,8 +74,8 @@ void	sort_array(t_stack *stack)
 {
 	int	step;
 	int	left_temp;
-	int size;
-	int swapped;
+	int	size;
+	int	swapped;
 
 	swapped = 1;
 	size = stack->size - 1;
@@ -96,34 +97,13 @@ void	sort_array(t_stack *stack)
 	}
 }
 
-/*
-Get a number and a stack and return index of this number on stack
-*/
-int	get_index(t_stack *stack, int nbr)
-{
-	int index;
-	int found_index;
-	index = stack->size - 1;
-	found_index = 0;
-	while (index >= 0)
-	{
-		if (stack->numbers[index] == nbr)
-		{
-			found_index = index;
-			break;
-		}
-		index--;
-	}
-	return found_index;
-}
-
 void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
-
 	while (i <= stack->size - 1)
 	{
 		while (j <= stack_aux->size - 1)
@@ -131,7 +111,7 @@ void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 			if (stack->numbers[i] == stack_aux->numbers[j])
 			{
 				stack->numbers[i] = j;
-				break;
+				break ;
 			}
 			j++;
 		}

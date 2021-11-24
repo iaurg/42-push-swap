@@ -6,13 +6,13 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:27:43 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 17:07:52 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 07:06:36 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void push(t_stack *source, t_stack *dest, char stack_name)
+void	push(t_stack *source, t_stack *dest, char stack_name)
 {
 	if (source->size < 1)
 		return ;
@@ -22,5 +22,5 @@ void push(t_stack *source, t_stack *dest, char stack_name)
 	source->numbers[source->top] = 0;
 	source->top--;
 	source->size--;
-	ft_printf("p%c\n", stack_name);
+	print_action("p", stack_name);
 }
