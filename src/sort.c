@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/24 08:14:32 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,15 @@ int	count_order_numbers(t_stack *stack)
 	return (count);
 }
 
-/*
-Hold recursion and send all back to A if is already sorted or shift is greater
-Right shift only certain number of bytes
-1010 >> 0 = 1010
-1010 >> 1 = 101
-1010 >> 2 = 10
-*/
-
-/** @file sort.c
- * @brief Order stack using radix and right shift binary.
- *
- *  If the character is a newline ('\n'), the cursor should
- *  be moved to the next line (scrolling if necessary).  If
- *  the character is a carriage return ('\r'), the cursor
- *  should be immediately reset to the beginning of the current
- *  line, causing any future output to overwrite any existing
- *  output on the line.  If backsapce ('\b') is encountered,
- *  the previous character should be erased (write a space
- *  over it and move the cursor back one column).  It is up
- *  to you how you want to handle a backspace occurring at the
- *  beginning of a line.
- *
- *  @param ch the character to print
+/** @brief Sort stack using radix and right shift binary.
+ *  With all numbers on stack being positive we can sort
+ *  using rightshift byte, based on number 0 position
+ *  we move to stack_b, rotate stack_a, then move everything to stack_a
+ *  again, we repeat until rightshift can parse biggest number
+ *  on stack_a or stack_a is sorted
+ *  @param stack_a pointer to stack_a
+ *  @param stack_b pointer to stack_b
+ *  @param right_shift numbers of bytes to right shift
  *  @return Zero after recursion
  */
 int	sort_algo_radix(t_stack *stack_a, t_stack *stack_b, int right_shift)
@@ -94,9 +80,12 @@ int	sort_algo_radix(t_stack *stack_a, t_stack *stack_b, int right_shift)
 	return (sort_algo_radix(stack_a, stack_b, right_shift + 1));
 }
 
-/*
-This function identifies what type of sort I will use on my stack
-*/
+/** @brief Check which type of sort we will use based on
+ *  stack_a size and run it until stack_a is sorted.
+ *  @param stack_a pointer to stack_a
+ *  @param stack_b pointer to stack_b
+ *  @return void
+ */
 void	sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size < 3)
