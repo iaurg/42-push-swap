@@ -6,12 +6,17 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 06:24:49 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:14:32 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:41:24 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/** @brief Count how many shift we can do
+ *  on number passed
+ *  @param int number to check
+ *  @return int with max shift
+ */
 int	bin_number_len(int number)
 {
 	int	count;
@@ -22,6 +27,10 @@ int	bin_number_len(int number)
 	return (count);
 }
 
+/** @brief Count how many number are sorted on stack
+ *  @param stack pointer to stack
+ *  @return int with total numbers ordered
+ */
 int	count_order_numbers(t_stack *stack)
 {
 	int	len;
@@ -96,7 +105,7 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 			size_3(stack_a);
 	else if (stack_a->size <= 5)
 		while (!is_sorted(stack_a))
-			size_5(stack_a, stack_b);
+			small_sort(stack_a, stack_b);
 	else
 		sort_algo_radix(stack_a, stack_b, 0);
 }

@@ -6,12 +6,17 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:54:26 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/** @brief check if stack passed has all
+ *  numbers sorted
+ *  @param *stack pointer to stack
+ *  @return int false(0)/true(1)
+ */
 int	is_sorted(t_stack *stack)
 {
 	int	i;
@@ -28,6 +33,10 @@ int	is_sorted(t_stack *stack)
 	return (true);
 }
 
+/** @brief find smallest number on stack
+ *  @param *stack pointer to stack
+ *  @return int smallest number
+ */
 int	smallest_in_stack(t_stack *stack)
 {
 	int	i;
@@ -44,6 +53,13 @@ int	smallest_in_stack(t_stack *stack)
 	return (smallest_index);
 }
 
+/** @brief move number on index passed
+ *  to the top of stack doing rotates
+ *  @param *stack pointer to stack
+ *  @param index position of number wanted on top
+ *  @param stack_name name of stack being moved
+ *  @return void
+ */
 void	move_nbr_top(t_stack *stack, int index, char stack_name)
 {
 	int	size;
@@ -69,7 +85,11 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 	}
 }
 
-// Try bubble sort while swap
+/** @brief sort array of numbers in stack
+ *  using bubble sort
+ *  @param *stack pointer to stack
+ *  @return void
+ */
 void	sort_array(t_stack *stack)
 {
 	int	step;
@@ -97,6 +117,13 @@ void	sort_array(t_stack *stack)
 	}
 }
 
+/** @brief convert all numbers on stack
+ *  to positive based on index and comparing with
+ *  an sorted array.
+ *  @param *stack pointer to stack
+ *  @param *stack_aux pointer to stack sorted
+ *  @return void
+ */
 void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 {
 	int	i;

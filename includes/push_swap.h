@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 07:56:39 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:02:18 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:47:19 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			print_error(void);
 int			is_valid(char **argv);
 void		init_stack(t_stack *stack, char **values);
 t_stack		*alloc_stack(int argc, int start_size);
-void		parse_stack_a(t_stack *stack, char **argv, int size);
+void		parse_stack(t_stack *stack, char **argv);
 int			is_sorted(t_stack *stack);
 void		swap(t_stack *stack, char stack_name);
 void		ss_swap(t_stack *stack_a, t_stack *stack_b);
@@ -38,7 +38,7 @@ void		rr_rotate(t_stack *stack_a, t_stack *stack_b);
 void		reverse_rotate(t_stack *stack, char stack_name);
 void		rr_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
 void		size_3(t_stack *stack);
-void		size_5(t_stack *stack_a, t_stack *stack_b);
+void		small_sort(t_stack *stack_a, t_stack *stack_b);
 int			smallest_in_stack(t_stack *stack);
 void		move_nbr_top(t_stack *stack, int index, char stack_name);
 void		sort_array(t_stack *stack);

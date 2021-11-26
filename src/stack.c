@@ -6,19 +6,25 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:42:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:48:39 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	parse_stack_a(t_stack *stack, char **argv, int size)
+/** @brief convert string comming form argv into
+ *  numbers and add to array numbers on stack
+ *  @param *stack pointer to stack
+ *  @param **argv array of strings
+ *  @return void
+ */
+void	parse_stack(t_stack *stack, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = size;
+	j = stack->size;
 	while (i < j)
 	{
 		stack->numbers[i] = ft_atoi(argv[j - i]);
@@ -27,6 +33,12 @@ void	parse_stack_a(t_stack *stack, char **argv, int size)
 	}
 }
 
+/** @brief create a stock pointer based on size,
+ *  we use start_size to avoid leaks on iteration
+ *  @param int size of stack
+ *  @param start_size initial size of stack
+ *  @return void
+ */
 t_stack	*alloc_stack(int size, int start_size)
 {
 	t_stack	*stack;

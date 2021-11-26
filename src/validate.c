@@ -6,12 +6,17 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:56:29 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/** @brief check if all strings on array are
+ *  a number
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
 static int	is_valid_number(char **argv)
 {
 	int		i;
@@ -37,6 +42,11 @@ static int	is_valid_number(char **argv)
 	return (true);
 }
 
+/** @brief check if has any duplicate of a number
+ *  on array
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
 static int	has_duplicate(char **argv)
 {
 	int	i;
@@ -58,6 +68,11 @@ static int	has_duplicate(char **argv)
 	return (false);
 }
 
+/** @brief check if array of string get via args
+ *  has valid numbers, and no duplicates.
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
 int	is_valid(char **argv)
 {
 	if (!is_valid_number(argv) || has_duplicate(argv))

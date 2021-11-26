@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/24 08:01:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:47:03 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ int	main(int argc, char **argv)
 	if (!is_valid(argv))
 		return (print_error());
 	stack_a = alloc_stack(argc - 1, argc - 1);
-	parse_stack_a(stack_a, argv, argc - 1);
+	parse_stack(stack_a, argv);
 	if (is_sorted(stack_a))
 		return (0);
 	stack_b = alloc_stack((argc - 1) - stack_a->size, argc - 1);
 	stack_aux = alloc_stack((argc - 1), argc - 1);
-	parse_stack_a(stack_aux, argv, (argc - 1));
+	parse_stack(stack_aux, argv);
 	sort_array(stack_aux);
 	normalize_stack(stack_a, stack_aux);
 	sort(stack_a, stack_b);
