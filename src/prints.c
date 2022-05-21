@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:00:10 by itaureli          #+#    #+#             */
-/*   Updated: 2022/05/21 18:02:53 by itaureli         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:19:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  *  @param void
  *  @return int false (0)
  */
-int print_error(void)
+int	print_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (false);
@@ -27,7 +27,7 @@ int print_error(void)
  *  @param stack_name letter that represent stack (a,b)
  *  @return void
  */
-void print_action(char *type, char stack_name)
+void	print_action(char *type, char stack_name)
 {
 	ft_putstr_fd(type, STDOUT_FILENO);
 	ft_putchar_fd(stack_name, STDOUT_FILENO);
