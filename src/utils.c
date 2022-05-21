@@ -6,18 +6,23 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:56:01 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/13 17:01:56 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:54:26 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
-int is_sorted(t_stack *stack)
+/** @brief check if stack passed has all
+ *  numbers sorted
+ *  @param *stack pointer to stack
+ *  @return int false(0)/true(1)
+ */
+int	is_sorted(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	if(stack->size == 1 || stack->size == 0)
+	if (stack->size == 1 || stack->size == 0)
 		return (true);
 	while (i < stack->size)
 	{
@@ -28,10 +33,14 @@ int is_sorted(t_stack *stack)
 	return (true);
 }
 
+/** @brief find smallest number on stack
+ *  @param *stack pointer to stack
+ *  @return int smallest number
+ */
 int	smallest_in_stack(t_stack *stack)
 {
-	int i;
-	int smallest_index;
+	int	i;
+	int	smallest_index;
 
 	i = 0;
 	smallest_index = 0;
@@ -41,22 +50,33 @@ int	smallest_in_stack(t_stack *stack)
 			smallest_index = i;
 		i++;
 	}
-	return smallest_index;
+	return (smallest_index);
 }
 
+/** @brief move number on index passed
+ *  to the top of stack doing rotates
+ *  @param *stack pointer to stack
+ *  @param index position of number wanted on top
+ *  @param stack_name name of stack being moved
+ *  @return void
+ */
 void	move_nbr_top(t_stack *stack, int index, char stack_name)
 {
-	if (index > (stack->size / 2))
+	int	size;
+
+	size = stack->size;
+	if (index > (size / 2))
 	{
-		while (stack->size - index > 0)
+		while (size - index > 0)
 		{
-			if (index == (stack->size - 1))
+			if (index == (size - 1))
 				return ;
 			rotate(stack, stack_name);
 			index++;
 		}
 	}
-	else {
+	else
+	{
 		while (index >= 0)
 		{
 			reverse_rotate(stack, stack_name);
@@ -65,13 +85,17 @@ void	move_nbr_top(t_stack *stack, int index, char stack_name)
 	}
 }
 
-// Try bubble sort while swap
+/** @brief sort array of numbers in stack
+ *  using bubble sort
+ *  @param *stack pointer to stack
+ *  @return void
+ */
 void	sort_array(t_stack *stack)
 {
 	int	step;
 	int	left_temp;
-	int size;
-	int swapped;
+	int	size;
+	int	swapped;
 
 	swapped = 1;
 	size = stack->size - 1;
@@ -93,23 +117,32 @@ void	sort_array(t_stack *stack)
 	}
 }
 
-int binary_search(t_stack *stack, int nbt_to_find)
+/** @brief convert all numbers on stack
+ *  to positive based on index and comparing with
+ *  an sorted array.
+ *  @param *stack pointer to stack
+ *  @param *stack_aux pointer to stack sorted
+ *  @return void
+ */
+void	normalize_stack(t_stack *stack, t_stack *stack_aux)
 {
-	int first;
-	int last;
-	int middle;
+	int	i;
+	int	j;
 
-	first = 0;
-	last = stack->size - 1;
-	middle = (first + last) / 2;
-	while (first <= last) {
-		if (stack->numbers[middle] < nbt_to_find)
-			first = middle + 1;
-		else if (stack->numbers[middle] == nbt_to_find)
-			return 1;
-		else
-			last = middle - 1;
-		middle = (first + last)/2;
+	i = 0;
+	j = 0;
+	while (i <= stack->size - 1)
+	{
+		while (j <= stack_aux->size - 1)
+		{
+			if (stack->numbers[i] == stack_aux->numbers[j])
+			{
+				stack->numbers[i] = j;
+				break ;
+			}
+			j++;
+		}
+		j = 0;
+		i++;
 	}
-	return 0;
 }

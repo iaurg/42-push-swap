@@ -6,16 +6,22 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:15:12 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/05 06:26:39 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:50:05 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
+/** @brief action to swap numbers on stack, after swap
+ *  we print s(a,b)
+ *  @param *stack pointer to stack
+ *  @param stack_name letter that represent stack (a,b)
+ *  @return void
+ */
 void	swap(t_stack *stack, char stack_name)
 {
-	int holder;
-	int top;
+	int	holder;
+	int	top;
 
 	if (stack->size < 2)
 		return ;
@@ -24,12 +30,18 @@ void	swap(t_stack *stack, char stack_name)
 	stack->numbers[top] = stack->numbers[top - 1];
 	stack->numbers[top - 1] = holder;
 	if (stack_name)
-		ft_printf("s%c\n", stack_name);
+		print_action("s", stack_name);
 }
 
+/** @brief action to swap numbers on both stacks,
+ *  after swap we print ss
+ *  @param *stack_a pointer to stack_a
+ *  @param *stack_b pointer to stack_b
+ *  @return void
+ */
 void	ss_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a, 0);
 	swap(stack_b, 0);
-	ft_printf("ss\n");
+	print_action("s", 's');
 }

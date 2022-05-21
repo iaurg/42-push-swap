@@ -6,24 +6,22 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:06:34 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/06 08:19:48 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/26 06:56:29 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/push_swap.h"
 
-/*
-OK: Validate it's a integer with INT_MAX and INT_MIN
-OK: Not allow duplicates
-TODO: Review pdf rules
-OK: Not allow strings
-*/
-
+/** @brief check if all strings on array are
+ *  a number
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
 static int	is_valid_number(char **argv)
 {
-	int i;
-	int j;
-	long value;
+	int		i;
+	int		j;
+	long	value;
 
 	j = 0;
 	i = 1;
@@ -32,7 +30,7 @@ static int	is_valid_number(char **argv)
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
-				return false;
+				return (false);
 			j++;
 		}
 		j = 0;
@@ -44,10 +42,15 @@ static int	is_valid_number(char **argv)
 	return (true);
 }
 
-static int has_duplicate(char **argv)
+/** @brief check if has any duplicate of a number
+ *  on array
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
+static int	has_duplicate(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 2;
@@ -65,9 +68,14 @@ static int has_duplicate(char **argv)
 	return (false);
 }
 
-int is_valid(char **argv)
+/** @brief check if array of string get via args
+ *  has valid numbers, and no duplicates.
+ *  @param **argv array of string
+ *  @return int false(0)/true(1)
+ */
+int	is_valid(char **argv)
 {
-	if(!is_valid_number(argv) || has_duplicate(argv))
+	if (!is_valid_number(argv) || has_duplicate(argv))
 		return (false);
-	return(true);
+	return (true);
 }
