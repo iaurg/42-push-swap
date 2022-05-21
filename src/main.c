@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:29:53 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/26 06:47:03 by itaureli         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:43:03 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ Array aux to hold ordered numbers
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_stack	*stack_aux;
+	t_stack *stack_a;
+	t_stack *stack_b;
+	t_stack *stack_aux;
 
 	if (argc < 2)
-		return (print_error());
+		return (0);
 	if (!is_valid(argv))
 		return (print_error());
 	stack_a = alloc_stack(argc - 1, argc - 1);

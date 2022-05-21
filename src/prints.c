@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:00:10 by itaureli          #+#    #+#             */
-/*   Updated: 2022/05/21 13:16:11 by itaureli         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:02:53 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  */
 int print_error(void)
 {
-	ft_putstr_fd("Error \n", STDERR_FILENO);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (false);
 }
 
